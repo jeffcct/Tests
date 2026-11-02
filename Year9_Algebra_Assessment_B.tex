@@ -1,5 +1,7 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[margin=2cm]{geometry}
+\usepackage[margin=2cm,top=1.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{amsmath,amssymb}
 \usepackage{tikz}
 \usepackage{array}
@@ -36,23 +38,24 @@
 \section*{Section A: Algebraic Expressions and Index Laws}
 
 \q{1} Simplify by collecting like terms: $7c + 2d - 3c + 6d$
-\ansbox{2.2cm}
+\ansbox{1.9cm}
 
 \q{2} Simplify by collecting like terms: $6y^2 + 2y - 2y^2 - 7y$
-\ansbox{2.2cm}
+\ansbox{1.9cm}
 
 \q{3} Simplify using multiplication: $5r \times 2s$
-\ansbox{2.2cm}
+\ansbox{1.9cm}
 
 \q{4} Simplify using multiplication and index laws: $4y^2 \times 3y^6$
-\ansbox{2.2cm}
+\ansbox{1.9cm}
 
 \q{5} Simplify using division: $\dfrac{24n^8}{6n^3}$
-\ansbox{2.2cm}
+\ansbox{1.9cm}
 
 \q{6} Expand: $5(2t - 3)$
-\ansbox{2.2cm}
+\ansbox{1.9cm}
 
+\newpage
 \q{7} Expand and simplify: $3(x + 2) + 4(2x - 5)$
 \ansbox{3cm}
 
@@ -82,15 +85,14 @@ b) $c^2 + ab$
 \q{12} Solve the linear equation: $4(3k + 2) = 44$
 \ansbox{3cm}
 
-\q{13} %%% PLACEHOLDER -- reasoning-style question to be supplied by teacher %%%
-\textit{[Question 13 to be supplied.]}
+\q{13} A plumber has a \$15 call-out fee and charges \$35 per hour on top of this.
 
 \begin{minipage}[t]{0.48\linewidth}
-a) \textit{[Part a]}
+a) Write an equation for the total cost, $C$, to hire him for $h$ hours.
 \ansbox{2.5cm}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.48\linewidth}
-b) \textit{[Part b]}
+b) Use your equation to find how many hours the plumber worked if the total cost was \$190.
 \ansbox{2.5cm}
 \end{minipage}
 
@@ -173,6 +175,57 @@ b) State the coordinates of the $y$-intercept.\\[\baselineskip]
 \ansbox{2.5cm}
 \end{minipage}
 
+\newpage
+\q{20} Two straight lines, Line A and Line B, are drawn on the grid below.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.62]
+  \draw[cyan!40, thin] (-4,-6) grid (4,6);
+  \draw[thick,<->,>=stealth] (-4.4,0) -- (4.4,0) node[right] {$x$};
+  \draw[thick,<->,>=stealth] (0,-6.4) -- (0,6.4) node[above] {$y$};
+  \foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+    \draw (\x,0.12) -- (\x,-0.12);
+    \node[below, font=\small] at (\x,-0.1) {$\x$};
+  }
+  \foreach \y in {-6,...,-1,1,2,...,6} {
+    \draw (0.12,\y) -- (-0.12,\y);
+    \node[left, font=\small] at (-0.1,\y) {$\y$};
+  }
+  \node[below left, font=\small] at (0,0) {$0$};
+  % Line A: y = x + 3
+  \draw[very thick, blue!70!black] (-4,-1) -- (3,6) node[right] {\textbf{A}};
+  % Line B: y = -3x - 1
+  \draw[very thick, red!70!black] (-7/3,6) node[left] {\textbf{B}} -- (5/3,-6);
+\end{tikzpicture}
+\end{center}
+
+a) Complete the table for each line.
+
+\vspace{4pt}
+{\renewcommand{\arraystretch}{2.2}
+\begin{tabular}{|p{1.6cm}|p{3.2cm}|p{5.2cm}|p{3.6cm}|}
+\hline
+\textbf{Line} & \textbf{Gradient ($m$)} & \textbf{Direction (uphill or downhill from left to right)} & \textbf{$y$-intercept} \\ \hline
+A & & & \\ \hline
+B & & & \\ \hline
+\end{tabular}}
+
+b) Which line is steeper? Use the gradients to explain your answer.
+\writelines{3}
+
+\q{21} Jake says that $3x(2x + 1) = 6x^2 + 3x$. Lisa says that Jake is wrong and that expanding and equal are not the same.
+
+Show, by substituting $x = 2$ and $x = -1$ into both expressions, that Jake is actually correct and both expressions are the same.
+
+\begin{minipage}[t]{0.48\linewidth}
+When $x = 2$:
+\ansbox{4.5cm}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+When $x = -1$:
+\ansbox{4.5cm}
+\end{minipage}
+
 %==========================================================
 \newpage
 \section*{Marking grid}
@@ -220,7 +273,8 @@ Award 2 marks for straightforward questions and 3 marks for questions involving 
       b) $4^2 + (5)(-2) = 16 - 10 = 6$
 \item $6x = 36 \implies x = 6$
 \item $12k + 8 = 44 \implies 12k = 36 \implies k = 3$ \quad (or $3k + 2 = 11 \implies k = 3$)
-\item \textit{[Answers to be supplied with Question 13.]}
+\item a) $C = 35h + 15$ \\
+      b) $35h + 15 = 190 \implies 35h = 175 \implies h = 5$ hours
 \item $5x \le 20 \implies x \le 4$
 \item A solid (closed) circle at $4$ with an arrow pointing to the left along the number line.
 \item a) Start with 5 matches and add 4 matches for each new pattern (or: multiply the pattern number by 4 and add 1). \\
@@ -230,6 +284,12 @@ Award 2 marks for straightforward questions and 3 marks for questions involving 
 \item Points $(-2, -5)$, $(-1, -2)$, $(0, 1)$ and $(1, 4)$ plotted accurately, with a single straight line drawn through them and extended across the grid.
 \item a) Gradient $m = -2$; it is negative. \\
       b) $(0, 6)$
+\item a) Line A: gradient $m = 1$, uphill (positive), $y$-intercept $(0, 3)$. \\
+      \phantom{a) }Line B: gradient $m = -3$, downhill (negative), $y$-intercept $(0, -1)$. \\
+      b) Line B is steeper, because the size of its gradient (3) is greater than the size of Line A's gradient (1). The negative sign only tells us the direction, not the steepness.
+\item When $x = 2$: $3(2)(2 \times 2 + 1) = 6 \times 5 = 30$ and $6(2)^2 + 3(2) = 24 + 6 = 30$. \\
+      When $x = -1$: $3(-1)(2 \times (-1) + 1) = (-3)(-1) = 3$ and $6(-1)^2 + 3(-1) = 6 - 3 = 3$. \\
+      Both expressions give the same value each time, so Jake is correct: expanding gives an equivalent (equal) expression.
 \end{enumerate}
 
 \end{document}
